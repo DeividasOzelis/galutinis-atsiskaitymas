@@ -6,6 +6,7 @@ const StyledSection = styled.section`
     justify-content: center;
     padding: 0;
     padding-block: 50px;
+    user-select: none;
     > .container{
         width: 80%;
         height: 500px;

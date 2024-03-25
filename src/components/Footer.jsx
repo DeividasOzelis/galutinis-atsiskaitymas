@@ -13,6 +13,9 @@ const StyledSection = styled.section`
         display: flex;
         justify-content: space-around;
         > :first-child{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             > a{
                 > img{
                     width: 150px;
@@ -80,7 +83,7 @@ function Footer() {
         <StyledSection>
             <div className="stuff">
                 <div>
-                    <Link><img src={logo} alt="logo" /></Link>
+                    <Link to={'/'}><img src={logo} alt="logo" /></Link>
                 </div>
                 <div>
                     <h3>Usefull Links</h3>

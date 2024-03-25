@@ -1,6 +1,6 @@
 import logo from '../media/logo.png';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const StyledSection = styled.section`
     display: flex;
@@ -13,6 +13,7 @@ const StyledSection = styled.section`
         > img{
             width: 100%;
             display: block;
+            cursor: pointer;
         }
     }
     > :last-child{
@@ -67,38 +68,39 @@ const StyledSection = styled.section`
 `;
 
 function Header() {
+    const navigate = useNavigate();
     return ( 
         <StyledSection>
             <div>
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" onClick={() => navigate('/')}/>
             </div>
             <div>
                 <div className="log">
                     <form>
                         <input 
                             type="text" 
-                            name="" 
-                            id="" 
+                            name="userName" 
+                            id="userName" 
                             placeholder='User Name'
                             value=""
                             onChange={()=> {}}
                         />
                         <input 
                             type="password" 
-                            name="" 
-                            id="" 
+                            name="password" 
+                            id="password" 
                             placeholder='Password'
                             value=""
                             onChange={()=> {}}
                         />
                         <input type="submit" value="Log In" className='primary-btn'/>
                     </form>
-                    <button className='primary-btn'>Sign Up</button>
+                    <button className='primary-btn' onClick={() => navigate('register')}>Sign Up</button>
                 </div>
                 <div className="nav">
                     <ul>
-                        <li><Link>Home</Link></li>
-                        <li><Link>Board</Link></li>
+                        <li><Link to={'/'}>Home</Link></li>
+                        <li><Link to={'/board'}>Board</Link></li>
                     </ul>
                 </div>
             </div>
