@@ -1,0 +1,48 @@
+{
+    "users": [
+        {
+            "id": "0",
+            "userName": "test",
+            "password": "test",
+            "email": "test@mail.com",
+            "role": "user",
+            "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+        },
+        {
+            "id": "1",
+            "userName": "admin",
+            "password": "admin",
+            "email": "admin@mail.com",
+            "role": "admin",
+            "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+        }
+    ],
+    "questions": [
+        {
+            "id": "0",
+            "userId": "0",
+            "question": "What is html?",
+            "date": "2024.03.25 10:54"
+        },
+        {
+            "id": "1",
+            "userId": "1",
+            "question": "What is java script?",
+            "date": "2024.03.25 10:54"
+        }
+    ],
+    "answers": [
+        {
+            "questionId": "0",
+            "userId": "0",
+            "answer": "Its Hyper text mark-up language.",
+            "date": "2024.03.25 10:58"
+        },
+        {
+            "questionId": "1",
+            "userId": "0",
+            "answer": "Its programming language.",
+            "date": "2024.03.25 10:58"
+        }
+    ]
+}
