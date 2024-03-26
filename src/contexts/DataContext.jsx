@@ -19,6 +19,18 @@ const DataProvider = ({ children }) => {
             .then(data => setUsers(data))
     }, []);
 
+    const createUser = newUser => {
+        setLogedInUser(newUser);
+        fetch(`http://localhost:3000/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(newUser)
+        });
+        setUsers([...users, newUser]);
+    }
+
     return (
         <DataContext.Provider
             value={{
@@ -27,7 +39,8 @@ const DataProvider = ({ children }) => {
                 users,
                 setUsers,
                 logedInUser,
-                setLogedInUser
+                setLogedInUser,
+                createUser
             }}
         >
             {children}

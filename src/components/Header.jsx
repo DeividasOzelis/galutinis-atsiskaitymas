@@ -149,7 +149,7 @@ function Header() {
                             <img src={logedInUser.avatar} alt="avatar" />
                         </div>
                         <span>{logedInUser.userName}</span>
-                        <button className='primary-btn' onClick={() => {setLogedInUser(false); navigate('/')}}>Log Out</button>
+                        <button className='primary-btn' onClick={() => {setLogedInUser(false); navigate('/')}}>Sign Out</button>
                     </div> :
                     <div className="log">
                         <form onSubmit={formik.handleSubmit}>
@@ -171,7 +171,7 @@ function Header() {
                                 onChange={formik.handleChange}
                                 required
                             />
-                            <input type="submit" value="Log In" className='primary-btn'/>
+                            <input type="submit" value="Sign In" className='primary-btn'/>
                         </form>
                         <button className='primary-btn' onClick={() => navigate('register')}>Sign Up</button>
                         {
