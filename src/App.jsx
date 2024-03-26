@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Board from './components/Board';
 import Register from './components/Register';
 import ErrorPage from './components/ErrorPage';
+import Modal from './components/Modal';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <Modal />
     </>
   );
 }

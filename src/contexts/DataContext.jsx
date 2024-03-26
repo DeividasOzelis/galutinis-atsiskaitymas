@@ -6,7 +6,9 @@ const DataProvider = ({ children }) => {
 
     const [posts, setPosts] = useState([]);
     const [users, setUsers] = useState([]);
+    const [answers, setAnswers] = useState([]);
     const [logedInUser, setLogedInUser] = useState(false);
+    const [openModalData, setOpenModalData] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:3000/questions`)
@@ -17,6 +19,11 @@ const DataProvider = ({ children }) => {
         fetch(`http://localhost:3000/users`)
             .then(res => res.json())
             .then(data => setUsers(data))
+    }, []);
+    useEffect(() => {
+        fetch(`http://localhost:3000/answers`)
+            .then(res => res.json())
+            .then(data => setAnswers(data))
     }, []);
 
     const createUser = newUser => {
@@ -29,7 +36,17 @@ const DataProvider = ({ children }) => {
             body: JSON.stringify(newUser)
         });
         setUsers([...users, newUser]);
-    }
+    };
+    const createPost = newPost => {
+        fetch(`http://localhost:3000/questions`, {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(newPost)
+        });
+        setPosts([...posts, newPost]);
+    };
 
     return (
         <DataContext.Provider
@@ -40,7 +57,12 @@ const DataProvider = ({ children }) => {
                 setUsers,
                 logedInUser,
                 setLogedInUser,
-                createUser
+                createUser,
+                answers,
+                setAnswers,
+                openModalData,
+                setOpenModalData,
+                createPost
             }}
         >
             {children}
