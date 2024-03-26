@@ -17,6 +17,15 @@ const StyledModal = styled.div`
         width: 500px;
         display: flex;
         flex-direction: column;
+        > span{
+            width: fit-content;
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 5px;
+            margin-top: 7px;
+            background-color: red;
+
+        }
         > label{
             margin-bottom: 10px;
             margin-top: 10px;
@@ -83,7 +92,7 @@ function Modal() {
             subject: Yup.string()
                 .required("This field must be filled!")
                 .min(5, "Must contain 5 symbols at least!")
-                .max(50, "Max 50 symbols!")
+                .max(60, "Max 60 symbols!")
                 .trim(),
             question: Yup.string()
                 .max(500, "Max 500 symbols!")
@@ -95,9 +104,9 @@ function Modal() {
     
     
     if(openModalData){
-        document.body.classList.add('active-modal2')
+        document.body.classList.add('active-modal')
       }else{
-        document.body.classList.remove('active-modal2')
+        document.body.classList.remove('active-modal')
     };
 
     if(!openModalData)  return null
@@ -111,7 +120,7 @@ function Modal() {
                 <button onClick={() => setOpenModalData(false)} className="primary-btn">×</button>
                 <h1>Create new question!</h1>
                 <form onSubmit={formik.handleSubmit}>
-                    <label htmlFor="subject">Subject up to 50 symbols: </label>
+                    <label htmlFor="subject">Subject up to 60 symbols: </label>
                     <input 
                         type="text" 
                         name="subject" 
@@ -121,6 +130,9 @@ function Modal() {
                         onChange={formik.handleChange} 
                         onBlur={formik.handleBlur}
                     />
+                    {
+                        formik.touched.subject && formik.errors.subject && <span>{formik.errors.subject}</span>
+                    }
                     <label htmlFor="question">Your question: </label>
                     <textarea 
                         name="question" 
@@ -133,6 +145,9 @@ function Modal() {
                         onBlur={formik.handleBlur}
                     >
                     </textarea>
+                    {
+                        formik.touched.question && formik.errors.question && <span>{formik.errors.question}</span>
+                    }
                     <input type="submit" value="Post!" className="primary-btn"/>
                 </form>
             </StyledModal>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const StyledSection = styled.section`
     width: 100%;
@@ -92,6 +93,11 @@ const StyledSection = styled.section`
 `;
 
 function Home() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
+
     return ( 
         <StyledSection>
             <div className="container">

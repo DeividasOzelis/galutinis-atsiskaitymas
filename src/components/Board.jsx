@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import DataContext from "../contexts/DataContext";
 import QuestionCard from "./QuestionCard";
 
@@ -44,6 +44,10 @@ const StyledSection = styled.section`
 function Board() {
     
     const { posts, logedInUser, setOpenModalData } = useContext(DataContext);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
     
 
     return ( 
