@@ -103,6 +103,25 @@ const DataProvider = ({ children }) => {
             else return el
         }));
     };
+    const handleLike = (answerId, userId) => {
+        const usersMaped = users.map(el => {
+            if(el.id === userId){
+                const liked = el.liked.includes(answerId) ? el.liked.filter(el => el !== answerId) : [...el.liked, answerId];
+                return {...el, liked}
+            }
+            return el
+        });
+        setUsers(usersMaped)
+        fetch(`http://localhost:3000/users/${userId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                liked: usersMaped.find(el => el.id === userId).liked
+            })
+        });
+    }
 
     return (
         <DataContext.Provider
@@ -129,7 +148,8 @@ const DataProvider = ({ children }) => {
                 deleteQuestion,
                 editQuestionModal,
                 setEditQuestionModal,
-                editQuestion
+                editQuestion,
+                handleLike
             }}
         >
             {children}

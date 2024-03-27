@@ -6,7 +6,13 @@
       "password": "test",
       "email": "test@mail.com",
       "role": "user",
-      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
+      "liked": [
+        "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
+        "b6b0be0e-3280-4451-857e-ce7444972a32",
+        "e59a0622-0382-484f-8a91-231808ac3fa0",
+        "5a2e93a5-8140-4f28-bda7-873be1de88ff"
+      ]
     },
     {
       "id": "1",
@@ -14,7 +20,13 @@
       "password": "admin",
       "email": "admin@mail.com",
       "role": "admin",
-      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
+      "liked": [
+        "b6b0be0e-3280-4451-857e-ce7444972a32",
+        "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
+        "5a2e93a5-8140-4f28-bda7-873be1de88ff",
+        "53ea0566-0e12-45b2-ad02-578a13e50390"
+      ]
     },
     {
       "id": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
@@ -22,7 +34,8 @@
       "password": "Vartotojas1@",
       "email": "hwidv@mail.com",
       "role": "user",
-      "avatar": "https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png"
+      "avatar": "https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png",
+      "liked": []
     },
     {
       "id": "0992147c-728d-45a1-9f57-1138a6087749",
@@ -30,7 +43,8 @@
       "password": "Spongebob1@",
       "email": "sponge@mail.com",
       "role": "user",
-      "avatar": "https://www.models-resource.com/resources/big_icons/13/12941.png?updated=1450977157"
+      "avatar": "https://www.models-resource.com/resources/big_icons/13/12941.png?updated=1450977157",
+      "liked": []
     }
   ],
   "questions": [
@@ -124,7 +138,10 @@
       "answer": "You can sort a Dictionary by value and save it back to itself (so that when you foreach over it the values come out in order):\n\ndict = dict.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);",
       "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
       "date": "2024-03-27 11:22",
-      "edited": []
+      "edited": [],
+      "likes": [
+        "0"
+      ]
     },
     {
       "id": "e59a0622-0382-484f-8a91-231808ac3fa0",

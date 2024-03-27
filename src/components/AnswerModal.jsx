@@ -84,7 +84,8 @@ function AnswerModal() {
                 answer: formik.values.answer,
                 userId: logedInUser.id,
                 date: `${time}`,
-                edited: []
+                edited: [],
+                likes: []
             };
             createAnswer(newAnswer);
             setOpenModal(false);

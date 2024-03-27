@@ -77,7 +77,8 @@ function Register() {
                 password: formik.values.password,
                 email: formik.values.email,
                 role: "user",
-                avatar: formik.values.avatar
+                avatar: formik.values.avatar,
+                liked: []
             };
             createUser(newUser);
             navigate('/board');
