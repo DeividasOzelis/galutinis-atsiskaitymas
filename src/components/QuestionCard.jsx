@@ -61,7 +61,7 @@ function QuestionCard({ data }) {
 
     const navigate = useNavigate();
 
-    const { users, answers } = useContext(DataContext);
+    const { users, answers, logedInUser } = useContext(DataContext);
 
     const author = users.filter(el => el.id === data.userId);
 
@@ -77,7 +77,14 @@ function QuestionCard({ data }) {
                 <button className="primary-btn" onClick={() => navigate(`${data.id}`)}>Read Answers</button>
             </div>
             <div className="right">
-                <p>Created: <span>{data.date}</span></p>
+                {
+                    logedInUser.id === data.userId || logedInUser.role === "admin" ?
+                     data.edited.length ?
+                    <p>Edited: <span>{data.edited[0]}</span></p> :
+                    <p>Created: <span>{data.date}</span></p> :
+                    <p>Created: <span>{data.date}</span></p>
+                }
+                {/* <p>Created: <span>{data.date}</span></p> */}
                 <p>Answers: <span>{connectedAnswers.length}</span></p>
                 <p>Author: <span>{author[0]?.userName}</span></p>
             </div>

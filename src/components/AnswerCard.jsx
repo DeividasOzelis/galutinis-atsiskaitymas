@@ -89,9 +89,11 @@ function AnswerCard({ data }) {
             </div>
             <div className="right">
                 {
-                    data.edited.length ?
-                    <p>Edited: <span>{data.edited[0]}</span></p> :
-                    <p>Created: <span>{data.date}</span></p>
+                    logedInUser.id === data.userId || logedInUser.role === "admin" ?
+                        data.edited.length ?
+                        <p>Edited: <span>{data.edited[0]}</span></p> :
+                        <p>Created: <span>{data.date}</span></p> :
+                        <p>Created: <span>{data.date}</span></p>
                 }
                 <p>Author: <span>{author[0]?.userName}</span></p>
             </div>

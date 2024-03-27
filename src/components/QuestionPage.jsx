@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import DataContext from "../contexts/DataContext";
 import AnswerCard from './AnswerCard';
@@ -41,8 +41,24 @@ const StyledSection = styled.section`
         border-top: 3px solid var(--light3);
     }
     > .question{
+        position: relative;
         border-radius: 15px;
         background-color: var(--dark);
+        > .edit{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                gap: 40px;
+                > i{
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    color: var(--light3);
+                    &:hover{
+                        transform: scale(1.3);
+                    }
+                }
+            }
         > h1{
             font-size: 2rem;
             padding-top: 20px;
@@ -75,8 +91,9 @@ const StyledSection = styled.section`
 
 function QuestionPage() {
 
+    const navigate = useNavigate();
     let { id } = useParams();
-    const { posts, answers, logedInUser, users, setOpenModal } = useContext(DataContext);
+    const { posts, answers, logedInUser, users, setOpenModal, deleteQuestion, setEditQuestionModal } = useContext(DataContext);
 
 
 
@@ -98,11 +115,30 @@ function QuestionPage() {
             }
             <h1>Question</h1>
             <div className="border"></div>
-            <div className="question">     
+            <div className="question"> 
+                    {
+                        logedInUser.id === question.userId || logedInUser.role === "admin" ?
+                        <div className="edit">
+                            <i className="bi bi-pencil-fill" onClick={() => setEditQuestionModal(question)}></i>
+                            <i className="bi bi-trash-fill" 
+                                onClick={() => {
+                                    deleteQuestion(question.id);
+                                    navigate('/board');
+                                }}>  
+                            </i>
+                        </div> :
+                        null
+                    }    
                     <h1>{question.subject}</h1>
                     <p>{question.question}</p>
                 <div className="data">
-                    <p>Created: <span>{question.date}</span></p>
+                    {
+                        logedInUser.id === question.userId || logedInUser.role === "admin" ?
+                        question.edited.length ?
+                        <p>Edited: <span>{question.edited[0]}</span></p> :
+                        <p>Created: <span>{question.date}</span></p> :
+                        <p>Created: <span>{question.date}</span></p>
+                    }
                     <p>Author: <span>{author[0]?.userName}</span></p>
                 </div>
             </div>

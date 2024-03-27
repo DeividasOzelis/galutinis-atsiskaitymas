@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import DataContext from "../contexts/DataContext";
 import styled from "styled-components";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
-import { v4 as uuidv4 } from 'uuid';
+
 
 
 const StyledModal = styled.div`
@@ -62,32 +62,33 @@ const StyledModal = styled.div`
     }
 `;
 
-function Modal() {
+function EditQuestionModal() {
 
     const time = new Intl.DateTimeFormat('lt-LT', {
         timeStyle: "short",
         dateStyle: "short"
     }).format(new Date());   
 
-    const { openModalData, setOpenModalData, logedInUser, createPost } = useContext(DataContext);
+    const { editQuestionModal, setEditQuestionModal, editQuestion } = useContext(DataContext);   
 
     const formik = useFormik({
         initialValues: {
             subject: "",
-            question: ""
+            answer: ""
         },
         onSubmit: values => {
             formik.resetForm();
-            const newPost = {
-                id: uuidv4(),
+
+            const editedQuestion = {
+                id: editQuestionModal.id,
                 subject: formik.values.subject,
                 question: formik.values.question,
-                userId: logedInUser.id,
-                date: `${time}`,
-                edited: []
+                userId: editQuestionModal.userId,
+                date: editQuestionModal.date,
+                edited: [time]
             };
-            createPost(newPost);
-            setOpenModalData(false);
+            editQuestion(editedQuestion);
+            setEditQuestionModal(false);
         },
         validationSchema: Yup.object({
             subject: Yup.string()
@@ -103,24 +104,30 @@ function Modal() {
         })
     })
 
+    useEffect(() => {
+       if(editQuestionModal){
+        formik.setValues({
+            subject: editQuestionModal.subject,
+            question: editQuestionModal.question
+        })
+       }
+       // eslint-disable-next-line 
+    }, [editQuestionModal, formik.setValues]);
     
-    
-    if(openModalData){
-        document.body.classList.add('active-modal')
+    if(editQuestionModal){
+        document.body.classList.add('active-modal4')
       }else{
-        document.body.classList.remove('active-modal')
+        document.body.classList.remove('active-modal4')
     };
 
-    if(!openModalData)  return null
-
-    
+    if(!editQuestionModal)  return null
 
     return ( 
         <>
             <div className="overlay"></div>
             <StyledModal className="modal">
-                <button onClick={() => {setOpenModalData(false); formik.resetForm()}} className="primary-btn">×</button>
-                <h1>Create new question!</h1>
+                <button onClick={() => {setEditQuestionModal(false); formik.resetForm()}} className="primary-btn">×</button>
+                <h1>Edit your question!</h1>
                 <form onSubmit={formik.handleSubmit}>
                     <label htmlFor="subject">Subject up to 60 symbols: </label>
                     <input 
@@ -157,4 +164,4 @@ function Modal() {
      );
 }
 
-export default Modal;
+export default EditQuestionModal;
