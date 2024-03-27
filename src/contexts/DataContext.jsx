@@ -10,6 +10,7 @@ const DataProvider = ({ children }) => {
     const [logedInUser, setLogedInUser] = useState(false);
     const [openModalData, setOpenModalData] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+    const [editAnswerModal, setEditAnswerModal] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:3000/questions`)
@@ -58,6 +59,28 @@ const DataProvider = ({ children }) => {
         });
         setAnswers([...answers, newAnswer]);
     };
+    const deleteAnswer = id => {
+        fetch(`http://localhost:3000/answers/${id}`, {
+            method: "DELETE"
+        });
+        setAnswers(answers.filter(el => el.id !== id ));
+    };
+
+    const editAnswer = editedAnswer => {
+        fetch(`http://localhost:3000/answers/${editedAnswer.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(editedAnswer)
+        });
+        setAnswers(answers.map(el => {
+            if(el.id === editedAnswer.id){
+                return editedAnswer
+            }
+            else return el
+        }));
+    }
 
     return (
         <DataContext.Provider
@@ -76,7 +99,11 @@ const DataProvider = ({ children }) => {
                 createPost,
                 openModal,
                 setOpenModal,
-                createAnswer
+                createAnswer,
+                deleteAnswer,
+                editAnswerModal,
+                setEditAnswerModal,
+                editAnswer
             }}
         >
             {children}

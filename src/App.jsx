@@ -9,6 +9,7 @@ import Modal from './components/Modal';
 import QuestionPage from './components/QuestionPage';
 import AnswerModal from './components/AnswerModal';
 import { Routes, Route } from 'react-router-dom';
+import EditAnswerModal from './components/EditAnswerModal';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Footer />
       <Modal />
       <AnswerModal />
+      <EditAnswerModal />
     </>
   );
 }

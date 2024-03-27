@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import DataContext from "../contexts/DataContext";
 import styled from "styled-components";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
-import { v4 as uuidv4 } from 'uuid';
+
 
 
 const StyledModal = styled.div`
@@ -62,15 +62,14 @@ const StyledModal = styled.div`
     }
 `;
 
-function AnswerModal() {
+function EditAnswerModal() {
 
     const time = new Intl.DateTimeFormat('lt-LT', {
         timeStyle: "short",
         dateStyle: "short"
     }).format(new Date());   
 
-    const { openModal, setOpenModal, logedInUser, createAnswer } = useContext(DataContext);
-    
+    const { editAnswerModal, setEditAnswerModal, editAnswer } = useContext(DataContext);   
 
     const formik = useFormik({
         initialValues: {
@@ -78,16 +77,17 @@ function AnswerModal() {
         },
         onSubmit: values => {
             formik.resetForm();
-            const newAnswer = {
-                id: uuidv4(),
-                questionId: openModal.id,
+
+            const editedAnswer = {
+                id: editAnswerModal.id,
+                questionId: editAnswerModal.questionId,
                 answer: formik.values.answer,
-                userId: logedInUser.id,
-                date: `${time}`,
-                edited: []
+                userId: editAnswerModal.userId,
+                date: editAnswerModal.date,
+                edited: [time]
             };
-            createAnswer(newAnswer);
-            setOpenModal(false);
+            editAnswer(editedAnswer);
+            setEditAnswerModal(false);
         },
         validationSchema: Yup.object({
             answer: Yup.string()
@@ -98,24 +98,29 @@ function AnswerModal() {
         })
     })
 
+    useEffect(() => {
+       if(editAnswerModal){
+        formik.setValues({
+            answer: editAnswerModal.answer
+        })
+       }
+       // eslint-disable-next-line 
+    }, [editAnswerModal, formik.setValues]);
     
-    
-    if(openModal){
-        document.body.classList.add('active-modal2')
+    if(editAnswerModal){
+        document.body.classList.add('active-modal3')
       }else{
-        document.body.classList.remove('active-modal2')
+        document.body.classList.remove('active-modal3')
     };
 
-    if(!openModal)  return null
-
-    
+    if(!editAnswerModal)  return null
 
     return ( 
         <>
             <div className="overlay"></div>
             <StyledModal className="modal">
-                <button onClick={() => {setOpenModal(false); formik.resetForm()}} className="primary-btn">×</button>
-                <h1>Create your answer!</h1>
+                <button onClick={() => {setEditAnswerModal(false); formik.resetForm()}} className="primary-btn">×</button>
+                <h1>Edit your answer!</h1>
                 <form onSubmit={formik.handleSubmit}>
                     <label htmlFor="answer">Your answer: </label>
                     <textarea 
@@ -139,4 +144,4 @@ function AnswerModal() {
      );
 }
 
-export default AnswerModal;
+export default EditAnswerModal;

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useContext } from "react";
 import DataContext from "../contexts/DataContext";
 import AnswerCard from './AnswerCard';
+import ErrorPage from "./ErrorPage";
 
 const StyledSection = styled.section`
     position: relative;
@@ -77,10 +78,15 @@ function QuestionPage() {
     let { id } = useParams();
     const { posts, answers, logedInUser, users, setOpenModal } = useContext(DataContext);
 
+
+
     const question = posts.find(el => el.id === id); 
+    if(posts.length && !question) return <ErrorPage />
     const author = users.filter(el => el.id === question.userId);
     const relatedAnswers = answers.filter(el => el.questionId === id);
-    
+
+
+     if(!question) return null
     return ( 
         <StyledSection>
             {

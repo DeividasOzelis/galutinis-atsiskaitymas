@@ -16,6 +16,22 @@ const StyledDiv = styled.div`
         border-bottom-right-radius: 10px;
         display: flex;
         align-items: center;
+        > .edit{
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                display: flex;
+                gap: 40px;
+                > i{
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    color: var(--light3);
+                    &:hover{
+                        transform: scale(1.3);
+                    }
+                }
+            }
         > h1{
             margin: 5px 20px;
             color: var(--light2);
@@ -49,9 +65,9 @@ const StyledDiv = styled.div`
     }
 `;
 
-function QuestionCard({ data }) {
+function AnswerCard({ data }) {
 
-    const { users } = useContext(DataContext);
+    const { users, logedInUser, deleteAnswer, setEditAnswerModal } = useContext(DataContext);
 
     const author = users.filter(el => el.id === data.userId);
 
@@ -59,16 +75,28 @@ function QuestionCard({ data }) {
     return ( 
         <StyledDiv>
             <div className="left">
+                    {
+                        logedInUser.id === data.userId || logedInUser.role === "admin" ?
+                        <div className="edit">
+                            <i className="bi bi-pencil-fill" onClick={() => setEditAnswerModal(data) }></i>
+                            <i className="bi bi-trash-fill" onClick={() => deleteAnswer(data.id)}></i>
+                        </div> :
+                        null
+                    }
                 <div className="border">
                     <p>{data.answer}</p>
                 </div>
             </div>
             <div className="right">
-                <p>Created: <span>{data.date}</span></p>
+                {
+                    data.edited.length ?
+                    <p>Edited: <span>{data.edited[0]}</span></p> :
+                    <p>Created: <span>{data.date}</span></p>
+                }
                 <p>Author: <span>{author[0]?.userName}</span></p>
             </div>
         </StyledDiv>
      );
 }
 
-export default QuestionCard;
+export default AnswerCard;

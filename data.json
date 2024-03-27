@@ -74,44 +74,70 @@
     {
       "id": "b6b0be0e-3280-4451-857e-ce7444972a32",
       "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
-      "answer": "You can add a click event listener to your button if you give it an id, and then change all elements with the class class1 to class2by using aforEach` loop. This way, if you have multiple elements with the class of class1 it will change all of them, not just one of them.",
+      "answer": "You can add a click event listener to your button if you give it an id, and then change all elements with the class class1 to class2by using aforEach` loop. This way, if you have multiple elements with the class of class1 it will change all of them, not just one of them.Thats it folks!",
       "userId": "0",
-      "date": "2024-03-27 11:12"
+      "date": "2024-03-27 11:12",
+      "edited": [
+        "2024-03-27 14:55"
+      ]
     },
     {
       "id": "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
       "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
       "answer": "You can simply use .replace() property.\ndocument.getElementById('test').classList.replace('class1', 'class2');",
       "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
-      "date": "2024-03-27 11:15"
+      "date": "2024-03-27 11:15",
+      "edited": []
     },
     {
       "id": "53ea0566-0e12-45b2-ad02-578a13e50390",
       "questionId": "0f45f92c-160f-4d80-aa17-8aa40bf7837a",
       "answer": "MaterialPageRoute has a parameter called fullscreenDialog which is set to false by default. When true your page animates a bit differently and swipe to go back on iOS will be disabled.",
       "userId": "1",
-      "date": "2024-03-27 11:18"
+      "date": "2024-03-27 11:18",
+      "edited": []
     },
     {
       "id": "edb8f44c-421a-4e8a-9c50-e3de9b7a3789",
       "questionId": "2ef537fc-ed91-486c-9384-c456d5189ec0",
-      "answer": "You could use:\n\nvar ordered = dict.OrderBy(x => x.Value);",
+      "answer": "You could use this one:\nvar ordered = dict.OrderBy(x => x.Value);",
       "userId": "0",
-      "date": "2024-03-27 11:21"
+      "date": "2024-03-27 11:21",
+      "edited": [
+        "2024-03-27 14:57"
+      ]
     },
     {
       "id": "7d722bfb-e70f-4fd9-8e81-7dd8c88b9093",
       "questionId": "2ef537fc-ed91-486c-9384-c456d5189ec0",
       "answer": "You can sort a Dictionary by value and save it back to itself (so that when you foreach over it the values come out in order):\n\ndict = dict.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);",
       "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
-      "date": "2024-03-27 11:22"
+      "date": "2024-03-27 11:22",
+      "edited": []
     },
     {
-      "id": "72d95a02-b401-45a1-8aac-15023c91e972",
+      "id": "e59a0622-0382-484f-8a91-231808ac3fa0",
       "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
-      "answer": "Sorry, cant help you with this one.",
+      "answer": "Sorry cant help you with this one :)\n",
       "userId": "0992147c-728d-45a1-9f57-1138a6087749",
-      "date": "2024-03-27 11:30"
+      "date": "2024-03-27 12:01",
+      "edited": []
+    },
+    {
+      "id": "66c96457-be0d-470e-be69-ee5af457e835",
+      "questionId": "0545d370-6287-4826-bf70-028dad0f683a",
+      "answer": "No answer to this one :)",
+      "userId": "0992147c-728d-45a1-9f57-1138a6087749",
+      "date": "2024-03-27 12:02",
+      "edited": []
+    },
+    {
+      "id": "5a2e93a5-8140-4f28-bda7-873be1de88ff",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "Thaks for answers!",
+      "userId": "1",
+      "date": "2024-03-27 13:17",
+      "edited": []
     }
   ]
 }
