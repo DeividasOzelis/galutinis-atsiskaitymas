@@ -19,11 +19,17 @@ const StyledSection = styled.section`
             justify-content: center;
             align-items: center;
             > p{
+                z-index: 100;
+                background-color: var(--dark);
+                border-top-right-radius: 160px;
+                border-bottom-right-radius: 160px;
+                padding: 70px 10px;
+                border-left: 3px solid var(--light3);
                 width: 70ch;
                 font-size: 1.3rem;
                 color: var(--light3);
                 &::first-line{
-                    font-size: 1.4rem;
+                    font-size: 1.6rem;
                     font-weight: bold;
                 }
             }
@@ -102,7 +108,7 @@ function Home() {
         <StyledSection>
             <div className="container">
                 <div className="left">
-                    <p>Welcome to our programming forum, where bytes meet brilliance! Whether you're a seasoned coder or just starting out, join our vibrant community to discuss languages, algorithms, and the latest tech trends. Let's debug together, share insights, and turn lines of code into innovative solutions. Happy coding!</p>
+                    <p>Welcome to coding forum, where bytes meet brilliance! Whether you're a seasoned coder or just starting out, join our vibrant community to discuss languages, algorithms, and the latest tech trends. Let's debug together, share insights, and turn lines of code into innovative solutions. Happy coding!</p>
                 </div>
                 <div className="right">
                     <div className="top">

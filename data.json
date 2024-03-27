@@ -23,73 +23,95 @@
       "email": "hwidv@mail.com",
       "role": "user",
       "avatar": "https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png"
+    },
+    {
+      "id": "0992147c-728d-45a1-9f57-1138a6087749",
+      "userName": "Spongebob",
+      "password": "Spongebob1@",
+      "email": "sponge@mail.com",
+      "role": "user",
+      "avatar": "https://www.models-resource.com/resources/big_icons/13/12941.png?updated=1450977157"
     }
   ],
   "questions": [
     {
-      "id": "0",
-      "subject": "What is html?",
-      "userId": "0",
-      "question": "What is html?",
-      "date": "2024.03.25 10:54"
-    },
-    {
-      "id": "1",
+      "id": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "subject": "Javascript replace a div's class with another class",
+      "question": "I have an HTML page with a div and a CSS class attached to it. I want the class element attached to it, to be replaced with another class when pressed a button. And most importantly I don't want a single line of CSS property to be changed of that class, I want the entire class to be replaced by another class.",
       "userId": "1",
-      "subject": "What is java script?",
-      "question": "What is java script? And how can you use it to make some nice stuff?efwefwevvv wefewofu oweiewwoien woeinv",
-      "date": "2024.03.25 10:54"
+      "date": "2024-03-27 11:10"
     },
     {
-      "id": "528557d3-f503-4e60-af64-0cf42eac3d24",
-      "subject": "Conditional rendering",
-      "question": "How to make thing work in react when you want to render something conditionaly?",
+      "id": "0f45f92c-160f-4d80-aa17-8aa40bf7837a",
+      "subject": "Flutter: Disable Swipe to Navigate Back in iOS and Android",
+      "question": "I'm new to flutter development, and find it a bit frustrating in iOS when you have a navigation drawer and when you swipe to open it, it'll perform a Navigation.of(context).pop(). I would like to disable this \"swipe to pop\" behavior in iOS. I have been perusing the documentation, but without much luck.",
       "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
-      "date": "2024.2.2 18:42"
+      "date": "2024-03-27 11:16"
     },
     {
-      "id": "6301f83a-a2fd-4246-8b31-05d09f6cf845",
-      "subject": "ebvsckslndonv",
-      "question": "cajcjdovn sdojvnowivn woinviw0evn",
+      "id": "2ef537fc-ed91-486c-9384-c456d5189ec0",
+      "subject": "How do you sort a dictionary by value?",
+      "question": "I often have to sort a dictionary (consisting of keys & values) by value. For example, I have a hash of words and respective frequencies that I want to order by frequency.\n\nThere is a SortedList which is good for a single value (say frequency), that I want to map back to the word.\n\nSortedDictionary orders by key, not value. Some resort to a custom class, but is there a cleaner way?",
       "userId": "1",
-      "date": "2024-03-26 19:1"
+      "date": "2024-03-27 11:20"
     },
     {
-      "id": "00921366-0624-4be8-a52d-448d97648319",
-      "subject": "slsdvk l v vje",
-      "question": "ldnvowv wdk vd wvkwpdkv wpkdv onv",
-      "userId": "1",
-      "date": "2024-03-26 19:10"
+      "id": "0545d370-6287-4826-bf70-028dad0f683a",
+      "subject": "PHP Razorpay payment through invoice",
+      "question": "i have integrated Razorpay in php, I'm sending invoice short_url link to customer to view/pay. my question is,\n\nwhether there is any option to redirect to my application url once customer made payment through invoice (because i want to save payment related details in table)\nis there any option to download invoice pdf in razorpay\nor there is any option to stop/restrict payment option via invoice (so that i can send payment link to customer for payments)\nPlease help!!",
+      "userId": "0",
+      "date": "2024-03-27 11:24"
     },
     {
-      "id": "dbeffb64-d886-4214-b4e2-c1640191b081",
-      "subject": "Very good question.",
-      "question": "What is div tag and what can you do with it?",
-      "userId": "1",
-      "date": "2024-03-26 20:07"
+      "id": "adf955b9-12ce-49d0-b941-6ede1f2c4c0c",
+      "subject": "What is html?",
+      "question": "Can anyone explain what is html?",
+      "userId": "0992147c-728d-45a1-9f57-1138a6087749",
+      "date": "2024-03-27 11:29"
     }
   ],
   "answers": [
     {
-      "questionId": "0",
+      "id": "b6b0be0e-3280-4451-857e-ce7444972a32",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "You can add a click event listener to your button if you give it an id, and then change all elements with the class class1 to class2by using aforEach` loop. This way, if you have multiple elements with the class of class1 it will change all of them, not just one of them.",
       "userId": "0",
-      "answer": "Its Hyper text mark-up language.",
-      "date": "2024.03.25 10:58",
-      "id": "5850"
+      "date": "2024-03-27 11:12"
     },
     {
-      "questionId": "0",
+      "id": "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "You can simply use .replace() property.\ndocument.getElementById('test').classList.replace('class1', 'class2');",
       "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
-      "answer": "Yes it is.",
-      "date": "2024.03.26 11:58",
-      "id": "5852"
+      "date": "2024-03-27 11:15"
     },
     {
-      "questionId": "1",
+      "id": "53ea0566-0e12-45b2-ad02-578a13e50390",
+      "questionId": "0f45f92c-160f-4d80-aa17-8aa40bf7837a",
+      "answer": "MaterialPageRoute has a parameter called fullscreenDialog which is set to false by default. When true your page animates a bit differently and swipe to go back on iOS will be disabled.",
+      "userId": "1",
+      "date": "2024-03-27 11:18"
+    },
+    {
+      "id": "edb8f44c-421a-4e8a-9c50-e3de9b7a3789",
+      "questionId": "2ef537fc-ed91-486c-9384-c456d5189ec0",
+      "answer": "You could use:\n\nvar ordered = dict.OrderBy(x => x.Value);",
       "userId": "0",
-      "answer": "Its programming language.",
-      "date": "2024.03.25 10:58",
-      "id": "319d"
+      "date": "2024-03-27 11:21"
+    },
+    {
+      "id": "7d722bfb-e70f-4fd9-8e81-7dd8c88b9093",
+      "questionId": "2ef537fc-ed91-486c-9384-c456d5189ec0",
+      "answer": "You can sort a Dictionary by value and save it back to itself (so that when you foreach over it the values come out in order):\n\ndict = dict.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);",
+      "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
+      "date": "2024-03-27 11:22"
+    },
+    {
+      "id": "72d95a02-b401-45a1-8aac-15023c91e972",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "Sorry, cant help you with this one.",
+      "userId": "0992147c-728d-45a1-9f57-1138a6087749",
+      "date": "2024-03-27 11:30"
     }
   ]
 }

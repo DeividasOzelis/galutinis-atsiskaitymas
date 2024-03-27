@@ -9,6 +9,7 @@ const DataProvider = ({ children }) => {
     const [answers, setAnswers] = useState([]);
     const [logedInUser, setLogedInUser] = useState(false);
     const [openModalData, setOpenModalData] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:3000/questions`)
@@ -47,6 +48,16 @@ const DataProvider = ({ children }) => {
         });
         setPosts([...posts, newPost]);
     };
+    const createAnswer = newAnswer => {
+        fetch(`http://localhost:3000/answers`, {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(newAnswer)
+        });
+        setAnswers([...answers, newAnswer]);
+    };
 
     return (
         <DataContext.Provider
@@ -62,7 +73,10 @@ const DataProvider = ({ children }) => {
                 setAnswers,
                 openModalData,
                 setOpenModalData,
-                createPost
+                createPost,
+                openModal,
+                setOpenModal,
+                createAnswer
             }}
         >
             {children}

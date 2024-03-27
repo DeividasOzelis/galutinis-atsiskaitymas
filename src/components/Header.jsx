@@ -130,7 +130,6 @@ function Header() {
                 setLogedInUser(user);
                 setFailedLogin(false);
                 formik.resetForm();
-                navigate('board');
             }
         }
     });

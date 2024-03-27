@@ -31,6 +31,7 @@ main{
   min-height: calc(100vh - 200px - 210px);
   background-color: var(--light1);
 }
+
 .modal{
   position: fixed;
   top: 50%;
@@ -48,6 +49,9 @@ main{
   z-index: 1000;
 }
 .active-modal{
+  overflow-y: hidden;
+}
+.active-modal2{
   overflow-y: hidden;
 }
 

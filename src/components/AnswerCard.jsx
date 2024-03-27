@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import DataContext from "../contexts/DataContext";
-import { useNavigate } from "react-router-dom";
 
 const StyledDiv = styled.div`
     margin-block: 8px;
@@ -15,6 +14,8 @@ const StyledDiv = styled.div`
         width: 80%;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
+        display: flex;
+        align-items: center;
         > h1{
             margin: 5px 20px;
             color: var(--light2);
@@ -23,19 +24,9 @@ const StyledDiv = styled.div`
             width: 80%;
             > p{
             max-width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             margin: 5px 20px;
             color: var(--light3);
         }
-        }
-        > button{
-            position: absolute;
-            padding-top: 3px;
-            right: 30px;
-            top: 23px;
-            transform: scale(1.2);
         }
     }
     > .right{
@@ -43,6 +34,7 @@ const StyledDiv = styled.div`
         background-color: var(--light2);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: flex-start;
         gap: 5px;
         > p{
@@ -59,26 +51,20 @@ const StyledDiv = styled.div`
 
 function QuestionCard({ data }) {
 
-    const navigate = useNavigate();
-
-    const { users, answers } = useContext(DataContext);
+    const { users } = useContext(DataContext);
 
     const author = users.filter(el => el.id === data.userId);
 
-    const connectedAnswers = answers.filter(el => el.questionId === data.id);
     
     return ( 
         <StyledDiv>
             <div className="left">
-                <h1>{data.subject}</h1>
                 <div className="border">
-                    <p>{data.question}</p>
+                    <p>{data.answer}</p>
                 </div>
-                <button className="primary-btn" onClick={() => navigate(`${data.id}`)}>Read Answers</button>
             </div>
             <div className="right">
                 <p>Created: <span>{data.date}</span></p>
-                <p>Answers: <span>{connectedAnswers.length}</span></p>
                 <p>Author: <span>{author[0]?.userName}</span></p>
             </div>
         </StyledDiv>
