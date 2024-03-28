@@ -1,0 +1,203 @@
+{
+  "users": [
+    {
+      "id": "0",
+      "userName": "Testas",
+      "password": "Testas123@",
+      "email": "test@mail.com",
+      "role": "moderator",
+      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
+      "banned": false,
+      "liked": [
+        "7d722bfb-e70f-4fd9-8e81-7dd8c88b9093",
+        "5a2e93a5-8140-4f28-bda7-873be1de88ff",
+        "b6b0be0e-3280-4451-857e-ce7444972a32"
+      ]
+    },
+    {
+      "id": "1",
+      "userName": "admin",
+      "password": "admin",
+      "email": "admin@mail.com",
+      "role": "admin",
+      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
+      "banned": false,
+      "liked": [
+        "b6b0be0e-3280-4451-857e-ce7444972a32",
+        "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
+        "5a2e93a5-8140-4f28-bda7-873be1de88ff",
+        "53ea0566-0e12-45b2-ad02-578a13e50390"
+      ]
+    },
+    {
+      "id": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
+      "userName": "vartotojas",
+      "password": "Vartotojas1@",
+      "email": "hwidv@mail.com",
+      "role": "user",
+      "avatar": "https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png",
+      "banned": true,
+      "liked": [
+        "1ecc862d-2305-491e-8dde-ce89609b4ac8"
+      ]
+    },
+    {
+      "id": "0992147c-728d-45a1-9f57-1138a6087749",
+      "userName": "Spongebob",
+      "password": "Spongebob1@",
+      "email": "sponge@mail.com",
+      "role": "user",
+      "avatar": "https://www.models-resource.com/resources/big_icons/13/12941.png?updated=1450977157",
+      "banned": false,
+      "liked": [
+        "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
+        "1ecc862d-2305-491e-8dde-ce89609b4ac8",
+        "53ea0566-0e12-45b2-ad02-578a13e50390",
+        "5a2e93a5-8140-4f28-bda7-873be1de88ff"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "subject": "Javascript replace a div's class with another class",
+      "question": "I have an HTML page with a div and a CSS class attached to it. I want the class element attached to it, to be replaced with another class when pressed a button. And most importantly I don't want a single line of CSS property to be changed of that class, I want the entire class to be replaced by another class.",
+      "userId": "1",
+      "date": "2024-03-27 11:10",
+      "image": "",
+      "edited": []
+    },
+    {
+      "id": "0f45f92c-160f-4d80-aa17-8aa40bf7837a",
+      "subject": "Flutter: Disable Swipe to Navigate Back in iOS and Android.",
+      "question": "I'm new to flutter development, and find it a bit frustrating in iOS when you have a navigation drawer and when you swipe to open it, it'll perform a Navigation.of(context).pop(). I would like to disable this \"swipe to pop\" behavior in iOS. I have been perusing the documentation, but without much luck.",
+      "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
+      "date": "2024-03-27 11:16",
+      "image": "",
+      "edited": [
+        "2024-03-27 16:53"
+      ]
+    },
+    {
+      "id": "2ef537fc-ed91-486c-9384-c456d5189ec0",
+      "subject": "How do you sort a dictionary by value?",
+      "question": "I often have to sort a dictionary (consisting of keys & values) by value. For example, I have a hash of words and respective frequencies that I want to order by frequency.\n\nThere is a SortedList which is good for a single value (say frequency), that I want to map back to the word.\n\nSortedDictionary orders by key, not value. Some resort to a custom class, but is there a cleaner way?",
+      "userId": "1",
+      "date": "2024-03-27 11:20",
+      "image": "",
+      "edited": []
+    },
+    {
+      "id": "adf955b9-12ce-49d0-b941-6ede1f2c4c0c",
+      "subject": "What is html?",
+      "question": "Can anyone explain what is html?",
+      "userId": "0992147c-728d-45a1-9f57-1138a6087749",
+      "date": "2024-03-27 11:29",
+      "image": "https://res.cloudinary.com/boardinfinity/image/upload/t_blog_img/bi-websites/blog/09/Screenshot--362-.png",
+      "edited": []
+    },
+    {
+      "id": "0545d370-6287-4826-bf70-028dad0f683a",
+      "subject": "PHP Razorpay payment through invoice.",
+      "question": "i have integrated Razorpay in php, I'm sending invoice short_url link to customer to view/pay. my question is,\nwhether there is any option to redirect to my application url once customer made payment through invoice (because i want to save payment related details in table)\nis there any option to download invoice pdf in razorpay\nor there is any option to stop/restrict payment option via invoice (so that i can send payment link to customer for payments)\nPlease help!!!",
+      "userId": "0",
+      "date": "2024-03-27 11:24",
+      "image": "",
+      "edited": [
+        "2024-03-27 16:38"
+      ]
+    },
+    {
+      "id": "7310c397-8a28-45a1-9f96-641bea96aae3",
+      "subject": "Does this work?",
+      "question": "Does this work as shown here?",
+      "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
+      "date": "2024-03-28 13:37",
+      "image": "https://www.bdodigital.com/getmedia/6ec8d843-f3f6-430a-94a3-548c21a4fff2/visual-a1.png",
+      "edited": [
+        "2024-03-28 13:46"
+      ]
+    },
+    {
+      "id": "a6a306f9-e116-463c-8e90-53154815c025",
+      "subject": "Read-only block in C++",
+      "question": "In C++, it is possible to declare a member function with the const keyword so that it cannot modify the object (except possibly it's mutable fields). Question: is there a way to write only a block so that it cannot modify the object?",
+      "userId": "0",
+      "date": "2024-03-28 17:07",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/1*G4yJyXF8q8in2BE_YDd_ww.png",
+      "edited": []
+    }
+  ],
+  "answers": [
+    {
+      "id": "b6b0be0e-3280-4451-857e-ce7444972a32",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "You can add a click event listener to your button if you give it an id, and then change all elements with the class class1 to class2by using aforEach` loop. This way, if you have multiple elements with the class of class1 it will change all of them, not just one of them.Thats it folks!",
+      "userId": "0",
+      "date": "2024-03-27 11:12",
+      "edited": [
+        "2024-03-27 14:55"
+      ]
+    },
+    {
+      "id": "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "You can simply use .replace() property.\ndocument.getElementById('test').classList.replace('class1', 'class2');...",
+      "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
+      "date": "2024-03-27 11:15",
+      "edited": [
+        "2024-03-27 15:48"
+      ]
+    },
+    {
+      "id": "53ea0566-0e12-45b2-ad02-578a13e50390",
+      "questionId": "0f45f92c-160f-4d80-aa17-8aa40bf7837a",
+      "answer": "MaterialPageRoute has a parameter called fullscreenDialog which is set to false by default. When true your page animates a bit differently and swipe to go back on iOS will be disabled.",
+      "userId": "1",
+      "date": "2024-03-27 11:18",
+      "edited": []
+    },
+    {
+      "id": "edb8f44c-421a-4e8a-9c50-e3de9b7a3789",
+      "questionId": "2ef537fc-ed91-486c-9384-c456d5189ec0",
+      "answer": "You could use this one:\nvar ordered = dict.OrderBy(x => x.Value);",
+      "userId": "0",
+      "date": "2024-03-27 11:21",
+      "edited": [
+        "2024-03-27 14:57"
+      ]
+    },
+    {
+      "id": "7d722bfb-e70f-4fd9-8e81-7dd8c88b9093",
+      "questionId": "2ef537fc-ed91-486c-9384-c456d5189ec0",
+      "answer": "You can sort a Dictionary by value and save it back to itself (so that when you foreach over it the values come out in order):\n\ndict = dict.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);",
+      "userId": "c3d65667-e09b-40ca-9482-3a89fd3703c7",
+      "date": "2024-03-27 11:22",
+      "edited": []
+    },
+    {
+      "id": "e59a0622-0382-484f-8a91-231808ac3fa0",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "Sorry cant help you with this one :)\n",
+      "userId": "0992147c-728d-45a1-9f57-1138a6087749",
+      "date": "2024-03-27 12:01",
+      "edited": []
+    },
+    {
+      "id": "5a2e93a5-8140-4f28-bda7-873be1de88ff",
+      "questionId": "bc9bd339-5794-46eb-ab37-06dda400c01b",
+      "answer": "Thaks for answers!",
+      "userId": "1",
+      "date": "2024-03-27 13:17",
+      "edited": []
+    },
+    {
+      "id": "1ecc862d-2305-491e-8dde-ce89609b4ac8",
+      "questionId": "7310c397-8a28-45a1-9f96-641bea96aae3",
+      "answer": "I can tell you this works fine my friend.",
+      "userId": "0992147c-728d-45a1-9f57-1138a6087749",
+      "date": "2024-03-28 13:39",
+      "edited": []
+    }
+  ]
+}

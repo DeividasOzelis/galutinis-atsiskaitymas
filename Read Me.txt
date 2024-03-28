@@ -1,0 +1,7 @@
+Instruction to open project:
+1. Download project and open it in your editor.
+2. Open terminal and navigate to "Galutinis atsiskaitymas" folder (type: "cd Galutinis atsiskaitymas" and hit enter).
+3. Start json server (type: "json-server data.json).
+4. Now open another terminal an repeat step 2.
+5. After navigating to "Galutinis atsiskaitymas" start project by typing "npm start". If 3000 port is bussy press Y key and enter. Project will start on 3001 port.
+6. Good luck!

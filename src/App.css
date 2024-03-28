@@ -1,4 +1,80 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  --dark: #392467;
+  --light1: #5D3587; 
+  --light2: #A367B1; 
+  --light3: #FFD1E3; 
+}
 body{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+section{
+  padding-inline: 30px;
+}
+.primary-btn{
+  border: 2px solid var(--light2);
+  border-radius: 30px;
+  padding-inline: 10px;
+  background-color: #ffd1e300;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover{
+    background-color: var(--light2);
+  }
+}
+main{
+  min-height: calc(100vh - 200px - 210px);
+  background-color: var(--light1);
+  > .wrapper{
+    width: 100%;
+    height: calc(100vh - 200px - 210px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >span {
+        font-size: 2rem;
+        color: var(--light3);
+    
+        >a {
+          color: white;
+        }
+      }
+  }
+}
+
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 50px;
+  z-index: 1000;
+  
+}
+.overlay{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.723);
+  z-index: 1000;
+}
+.active-modal{
+  overflow-y: hidden;
+}
+.active-modal2{
+  overflow-y: hidden;
+}
+.active-modal3{
+  overflow-y: hidden;
+}
+.active-modal4{
+  overflow-y: hidden;
+}
+.active-modal5{
+  overflow-y: hidden;
 }
