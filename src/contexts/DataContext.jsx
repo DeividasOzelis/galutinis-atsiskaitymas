@@ -12,6 +12,7 @@ const DataProvider = ({ children }) => {
     const [openModal, setOpenModal] = useState(false);
     const [editAnswerModal, setEditAnswerModal] = useState(false);
     const [editQuestionModal, setEditQuestionModal] = useState(false);
+    const [userEditModal, setUserEditModal] = useState(false);
 
 
 
@@ -29,11 +30,6 @@ const DataProvider = ({ children }) => {
                 handleLikeCount(users, answers);
             })
     }, []);
-    // useEffect(() => {
-    //     fetch(`http://localhost:3000/answers`)
-    //         .then(res => res.json())
-    //         .then(data => setAnswers(data))
-    // }, []);
 
     const createUser = newUser => {
         setLogedInUser(newUser);
@@ -154,7 +150,23 @@ const DataProvider = ({ children }) => {
         })
         setAnswers(likes);
         setUsers(usersMaped);
-    }
+    };
+    const editUser = editedUser => {
+        fetch(`http://localhost:3000/users/${logedInUser.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedUser)
+        });
+        setUsers(users.map(el => {
+            if (el.id === editedUser.id) {
+                return editedUser
+            }
+            else return el
+        }));
+        setLogedInUser(editedUser);
+    };
     return (
         <DataContext.Provider
             value={{
@@ -183,7 +195,10 @@ const DataProvider = ({ children }) => {
                 editQuestion,
                 handleLike,
                 handleFilter,
-                handleLikeCount
+                handleLikeCount,
+                userEditModal,
+                setUserEditModal,
+                editUser
             }}
         >
             {children}

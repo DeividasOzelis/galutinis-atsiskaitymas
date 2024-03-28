@@ -144,7 +144,7 @@ function Header() {
                 {
                     logedInUser ?
                     <div className="user">
-                        <div className="avatar">
+                        <div className="avatar" onClick={() => navigate(`users/${logedInUser.id}`)}>
                             <img src={logedInUser.avatar} alt="avatar" />
                         </div>
                         <span>{logedInUser.userName}</span>

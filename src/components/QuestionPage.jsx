@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import DataContext from "../contexts/DataContext";
 import AnswerCard from './AnswerCard';
 import ErrorPage from "./ErrorPage";
@@ -121,6 +121,9 @@ const StyledSection = styled.section`
 
 function QuestionPage() {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
     const navigate = useNavigate();
     let { id } = useParams();
     const { posts, answers, logedInUser, users, setOpenModal, deleteQuestion, setEditQuestionModal } = useContext(DataContext);

@@ -30,6 +30,21 @@ section{
 main{
   min-height: calc(100vh - 200px - 210px);
   background-color: var(--light1);
+  > .wrapper{
+    width: 100%;
+    height: calc(100vh - 200px - 210px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >span {
+        font-size: 2rem;
+        color: var(--light3);
+    
+        >a {
+          color: white;
+        }
+      }
+  }
 }
 
 .modal{
@@ -58,5 +73,8 @@ main{
   overflow-y: hidden;
 }
 .active-modal4{
+  overflow-y: hidden;
+}
+.active-modal5{
   overflow-y: hidden;
 }

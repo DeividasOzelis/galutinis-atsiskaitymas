@@ -11,6 +11,8 @@ import AnswerModal from './components/AnswerModal';
 import { Routes, Route } from 'react-router-dom';
 import EditAnswerModal from './components/EditAnswerModal';
 import EditQuestionModal from './components/EditQuestionModal';
+import UserPage from './components/UserPage';
+import UserEditModal from './components/UserEditModal';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path='board/:id' element={<QuestionPage />}/>
           <Route path='register' element={<Register />}/>
           <Route path='*' element={<ErrorPage />}/>
+          <Route path='users/:id' element={<UserPage />}/>
         </Routes>
         <div className="img">
           
@@ -33,6 +36,7 @@ function App() {
       <AnswerModal />
       <EditAnswerModal />
       <EditQuestionModal />
+      <UserEditModal />
     </>
   );
 }

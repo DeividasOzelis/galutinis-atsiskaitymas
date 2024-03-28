@@ -2,15 +2,16 @@
   "users": [
     {
       "id": "0",
-      "userName": "test",
-      "password": "test",
+      "userName": "Testas",
+      "password": "Testas123@",
       "email": "test@mail.com",
       "role": "user",
       "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
       "liked": [
         "7d722bfb-e70f-4fd9-8e81-7dd8c88b9093",
         "5a2e93a5-8140-4f28-bda7-873be1de88ff",
-        "e59a0622-0382-484f-8a91-231808ac3fa0"
+        "b6b0be0e-3280-4451-857e-ce7444972a32",
+        "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e"
       ]
     },
     {
@@ -48,7 +49,8 @@
       "liked": [
         "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
         "1ecc862d-2305-491e-8dde-ce89609b4ac8",
-        "53ea0566-0e12-45b2-ad02-578a13e50390"
+        "53ea0566-0e12-45b2-ad02-578a13e50390",
+        "5a2e93a5-8140-4f28-bda7-873be1de88ff"
       ]
     }
   ],
@@ -112,6 +114,15 @@
       "edited": [
         "2024-03-28 13:46"
       ]
+    },
+    {
+      "id": "a6a306f9-e116-463c-8e90-53154815c025",
+      "subject": "Read-only block in C++",
+      "question": "In C++, it is possible to declare a member function with the const keyword so that it cannot modify the object (except possibly it's mutable fields). Question: is there a way to write only a block so that it cannot modify the object?",
+      "userId": "0",
+      "date": "2024-03-28 17:07",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/1*G4yJyXF8q8in2BE_YDd_ww.png",
+      "edited": []
     }
   ],
   "answers": [
