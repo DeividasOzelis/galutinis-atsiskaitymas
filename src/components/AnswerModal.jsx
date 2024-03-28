@@ -67,10 +67,10 @@ function AnswerModal() {
     const time = new Intl.DateTimeFormat('lt-LT', {
         timeStyle: "short",
         dateStyle: "short"
-    }).format(new Date());   
+    }).format(new Date());
 
     const { openModal, setOpenModal, logedInUser, createAnswer } = useContext(DataContext);
-    
+
 
     const formik = useFormik({
         initialValues: {
@@ -84,8 +84,7 @@ function AnswerModal() {
                 answer: formik.values.answer,
                 userId: logedInUser.id,
                 date: `${time}`,
-                edited: [],
-                likes: []
+                edited: []
             };
             createAnswer(newAnswer);
             setOpenModal(false);
@@ -99,45 +98,45 @@ function AnswerModal() {
         })
     })
 
-    
-    
-    if(openModal){
+
+
+    if (openModal) {
         document.body.classList.add('active-modal2')
-      }else{
+    } else {
         document.body.classList.remove('active-modal2')
     };
 
-    if(!openModal)  return null
+    if (!openModal) return null
 
-    
 
-    return ( 
+
+    return (
         <>
             <div className="overlay"></div>
             <StyledModal className="modal">
-                <button onClick={() => {setOpenModal(false); formik.resetForm()}} className="primary-btn">×</button>
+                <button onClick={() => { setOpenModal(false); formik.resetForm() }} className="primary-btn">×</button>
                 <h1>Create your answer!</h1>
                 <form onSubmit={formik.handleSubmit}>
                     <label htmlFor="answer">Your answer: </label>
-                    <textarea 
-                        name="answer" 
-                        id="answer" 
-                        cols="30" 
+                    <textarea
+                        name="answer"
+                        id="answer"
+                        cols="30"
                         rows="10"
                         placeholder="Your answer"
                         value={formik.values.answer}
-                        onChange={formik.handleChange} 
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                     >
                     </textarea>
                     {
                         formik.touched.answer && formik.errors.answer && <span>{formik.errors.answer}</span>
                     }
-                    <input type="submit" value="Post!" className="primary-btn"/>
+                    <input type="submit" value="Post!" className="primary-btn" />
                 </form>
             </StyledModal>
         </>
-     );
+    );
 }
 
 export default AnswerModal;

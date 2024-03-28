@@ -100,8 +100,6 @@ function AnswerCard({ data }) {
 
     const isLiked = loged ? loged.liked.includes(data.id) : false;
 
-    const likesCount = users.reduce((likesCount, user) => user.liked.includes(data.id) ?
-        likesCount + 1 : likesCount, 0);
 
     return (
         <StyledDiv>
@@ -119,10 +117,11 @@ function AnswerCard({ data }) {
                                     onChange={() => handleLike(data.id, logedInUser.id)}
                                 />
                             </label>
-                            <span>{likesCount}</span>
+                            <span>{data.likesCount}</span>
                         </>
-                        : null
+                        : <span><i className="bi bi-hand-thumbs-up-fill"></i> {data.likesCount}</span>
                 }
+
                 {
                     logedInUser.id === data.userId || logedInUser.role === "admin" ?
                         <div className="edit">

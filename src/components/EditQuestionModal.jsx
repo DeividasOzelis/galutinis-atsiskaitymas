@@ -74,7 +74,8 @@ function EditQuestionModal() {
     const formik = useFormik({
         initialValues: {
             subject: "",
-            answer: ""
+            answer: "",
+            image: ""
         },
         onSubmit: values => {
             formik.resetForm();
@@ -85,6 +86,7 @@ function EditQuestionModal() {
                 question: formik.values.question,
                 userId: editQuestionModal.userId,
                 date: editQuestionModal.date,
+                image: formik.values.image,
                 edited: [time]
             };
             editQuestion(editedQuestion);
@@ -108,7 +110,8 @@ function EditQuestionModal() {
        if(editQuestionModal){
         formik.setValues({
             subject: editQuestionModal.subject,
-            question: editQuestionModal.question
+            question: editQuestionModal.question,
+            image: editQuestionModal.image
         })
        }
        // eslint-disable-next-line 
@@ -157,6 +160,15 @@ function EditQuestionModal() {
                     {
                         formik.touched.question && formik.errors.question && <span>{formik.errors.question}</span>
                     }
+                    <label htmlFor="image">Add image (optional*): </label>
+                    <input
+                        type="url"
+                        id="image"
+                        name="image"
+                        placeholder="Url of your image"
+                        value={formik.values.image}
+                        onChange={formik.handleChange}
+                    />
                     <input type="submit" value="Post!" className="primary-btn"/>
                 </form>
             </StyledModal>

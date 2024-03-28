@@ -66,8 +66,8 @@ function QuestionCard({ data }) {
     const author = users.filter(el => el.id === data.userId);
 
     const connectedAnswers = answers.filter(el => el.questionId === data.id);
-    
-    return ( 
+
+    return (
         <StyledDiv>
             <div className="left">
                 <h1>{data.subject}</h1>
@@ -79,17 +79,16 @@ function QuestionCard({ data }) {
             <div className="right">
                 {
                     logedInUser.id === data.userId || logedInUser.role === "admin" ?
-                     data.edited.length ?
-                    <p>Edited: <span>{data.edited[0]}</span></p> :
-                    <p>Created: <span>{data.date}</span></p> :
-                    <p>Created: <span>{data.date}</span></p>
+                        data.edited.length ?
+                            <p>Edited: <span>{data.edited[0]}</span></p> :
+                            <p>Created: <span>{data.date}</span></p> :
+                        <p>Created: <span>{data.date}</span></p>
                 }
-                {/* <p>Created: <span>{data.date}</span></p> */}
                 <p>Answers: <span>{connectedAnswers.length}</span></p>
                 <p>Author: <span>{author[0]?.userName}</span></p>
             </div>
         </StyledDiv>
-     );
+    );
 }
 
 export default QuestionCard;

@@ -74,7 +74,8 @@ function Modal() {
     const formik = useFormik({
         initialValues: {
             subject: "",
-            question: ""
+            question: "",
+            image: ""
         },
         onSubmit: values => {
             formik.resetForm();
@@ -84,6 +85,7 @@ function Modal() {
                 question: formik.values.question,
                 userId: logedInUser.id,
                 date: `${time}`,
+                image: formik.values.image,
                 edited: []
             };
             createPost(newPost);
@@ -150,6 +152,15 @@ function Modal() {
                     {
                         formik.touched.question && formik.errors.question && <span>{formik.errors.question}</span>
                     }
+                    <label htmlFor="image">Add image (optional*): </label>
+                    <input 
+                        type="url" 
+                        id="image"
+                        name="image"
+                        placeholder="Url of your image"
+                        value={formik.values.image}
+                        onChange={formik.handleChange}
+                    />
                     <input type="submit" value="Post!" className="primary-btn"/>
                 </form>
             </StyledModal>
