@@ -78,6 +78,7 @@ function Register() {
                 email: formik.values.email,
                 role: "user",
                 avatar: formik.values.avatar,
+                banned: false,
                 liked: []
             };
             createUser(newUser);

@@ -170,7 +170,7 @@ function QuestionPage() {
             <div className="border"></div>
             <div className="question">
                 {
-                    logedInUser.id === question.userId || logedInUser.role === "admin" ?
+                    logedInUser.id === question.userId || logedInUser.role === "admin" || logedInUser.role === "moderator" ?
                         <div className="edit">
                             <i className="bi bi-pencil-fill" onClick={() => setEditQuestionModal(question)}></i>
                             <i className="bi bi-trash-fill"

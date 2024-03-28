@@ -85,6 +85,7 @@ function UserEditModal() {
                 email: formik.values.email,
                 role: userEditModal.role,
                 avatar: formik.values.avatar,
+                banned: userEditModal.banned,
                 liked: userEditModal.liked
             };
             editUser(editedUser);

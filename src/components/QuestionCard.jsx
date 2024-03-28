@@ -78,7 +78,7 @@ function QuestionCard({ data }) {
             </div>
             <div className="right">
                 {
-                    logedInUser.id === data.userId || logedInUser.role === "admin" ?
+                    logedInUser.id === data.userId || logedInUser.role === "admin" || logedInUser.role === "moderator" ?
                         data.edited.length ?
                             <p>Edited: <span>{data.edited[0]}</span></p> :
                             <p>Created: <span>{data.date}</span></p> :

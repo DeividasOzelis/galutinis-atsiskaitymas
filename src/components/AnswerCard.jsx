@@ -123,7 +123,7 @@ function AnswerCard({ data }) {
                 }
 
                 {
-                    logedInUser.id === data.userId || logedInUser.role === "admin" ?
+                    logedInUser.id === data.userId || logedInUser.role === "admin" || logedInUser.role === "moderator" ?
                         <div className="edit">
                             <i className="bi bi-pencil-fill" onClick={() => setEditAnswerModal(data)}></i>
                             <i className="bi bi-trash-fill" onClick={() => deleteAnswer(data.id)}></i>
@@ -136,7 +136,7 @@ function AnswerCard({ data }) {
             </div>
             <div className="right">
                 {
-                    logedInUser.id === data.userId || logedInUser.role === "admin" ?
+                    logedInUser.id === data.userId || logedInUser.role === "admin" || logedInUser.role === "moderator" ?
                         data.edited.length ?
                             <p>Edited: <span>{data.edited[0]}</span></p> :
                             <p>Created: <span>{data.date}</span></p> :

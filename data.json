@@ -5,13 +5,13 @@
       "userName": "Testas",
       "password": "Testas123@",
       "email": "test@mail.com",
-      "role": "user",
+      "role": "moderator",
       "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
+      "banned": false,
       "liked": [
         "7d722bfb-e70f-4fd9-8e81-7dd8c88b9093",
         "5a2e93a5-8140-4f28-bda7-873be1de88ff",
-        "b6b0be0e-3280-4451-857e-ce7444972a32",
-        "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e"
+        "b6b0be0e-3280-4451-857e-ce7444972a32"
       ]
     },
     {
@@ -21,6 +21,7 @@
       "email": "admin@mail.com",
       "role": "admin",
       "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
+      "banned": false,
       "liked": [
         "b6b0be0e-3280-4451-857e-ce7444972a32",
         "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
@@ -35,6 +36,7 @@
       "email": "hwidv@mail.com",
       "role": "user",
       "avatar": "https://atg-prod-scalar.s3.amazonaws.com/studentpower/media/user%20avatar.png",
+      "banned": true,
       "liked": [
         "1ecc862d-2305-491e-8dde-ce89609b4ac8"
       ]
@@ -46,6 +48,7 @@
       "email": "sponge@mail.com",
       "role": "user",
       "avatar": "https://www.models-resource.com/resources/big_icons/13/12941.png?updated=1450977157",
+      "banned": false,
       "liked": [
         "4c44bb9a-8626-49ae-99d5-8a4c32eeb02e",
         "1ecc862d-2305-491e-8dde-ce89609b4ac8",

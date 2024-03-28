@@ -114,6 +114,7 @@ const StyledSection = styled.section`
 function Header() {
     const navigate = useNavigate();
     const [failedLogin, setFailedLogin] = useState(false);
+    const [banned, setBanned] = useState(false);
 
     const { setLogedInUser, users, logedInUser } = useContext(DataContext);
 
@@ -127,10 +128,16 @@ function Header() {
                 setFailedLogin(true);
                 return
             }else{
-                setLogedInUser(user);
-                setFailedLogin(false);
-                formik.resetForm();
-            }
+                if(user.banned ===true){
+                    setBanned(true);
+                    formik.resetForm()
+                    return
+                }else{
+                    setLogedInUser(user);
+                    setFailedLogin(false);
+                    formik.resetForm();
+                }
+                }   
         }
     });
     const user = users.find(el => el.userName === formik.values.userName && el.password === formik.values.password);
@@ -158,7 +165,7 @@ function Header() {
                                 id="userName" 
                                 placeholder='User Name'
                                 value={formik.values.userName}
-                                onChange={formik.handleChange}
+                                onChange={(e) => {formik.handleChange(e); setBanned(false)}}
                                 required
                             />
                             <input 
@@ -167,7 +174,7 @@ function Header() {
                                 id="password" 
                                 placeholder='Password'
                                 value={formik.values.password}
-                                onChange={formik.handleChange}
+                                onChange={(e) => {formik.handleChange(e); setBanned(false)}}
                                 required
                             />
                             <input type="submit" value="Sign In" className='primary-btn'/>
@@ -175,6 +182,9 @@ function Header() {
                         <button className='primary-btn' onClick={() => navigate('register')}>Sign Up</button>
                         {
                             failedLogin && <span>User name or password is wrong!</span>
+                        }
+                        {
+                            banned && <span>You are banned!</span>
                         }
                     </div>
                 }
